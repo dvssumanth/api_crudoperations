@@ -1,0 +1,10 @@
+<!-- invoice_detail.html -->
+<h1>Invoice {{ invoice.invoice_number }}</h1>
+<p>Date Created: {{ invoice.date_created }}</p>
+<p>Due Date: {{ invoice.due_date }}</p>
+<h2>Invoice Items</h2>
+<ul>
+    {% for item in invoice.items.all %}
+        <li>{{ item.product_name }} - {{ item.quantity }} x ${{ item.unit_price }}</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,10 @@
+<!-- create_invoice.html -->
+<form method="post">
+    {% csrf_token %}
+    {{ invoice_form.as_p }}
+    {{ item_formset.management_form }}
+    {% for form in item_formset %}
+        {{ form.as_p }}
+    {% endfor %}
+    <input type="submit" value="Create Invoice">
+</form>
